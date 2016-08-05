@@ -1,0 +1,20 @@
+<ion-content padding class="device-settings">
+	<h2>Device Information</h2>
+
+	<ion-item>
+        <ion-label floating>Device ID</ion-label>
+        <ion-input type="text" [(ngModel)]="deviceId" disabled="true"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label floating>Organization GUID</ion-label>
+        <ion-input type="text" [(ngModel)]="orgGuid" disabled="true"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label floating>Lead Source GUID</ion-label>
+        <ion-input type="text" [(ngModel)]="leadGuid" disabled="true"></ion-input>
+    </ion-item>
+
+	<button block large primary class="m-t-10" (click)="closeSettings()">Close</button>
+</ion-content>

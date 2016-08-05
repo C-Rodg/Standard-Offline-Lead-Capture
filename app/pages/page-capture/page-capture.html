@@ -1,0 +1,156 @@
+<ion-navbar *navbar>
+  <ion-title>Lead Capture</ion-title>
+</ion-navbar>
+
+<ion-content padding class="capture-tab">
+	
+	<header-image></header-image>	
+
+	<!-- ******************* SURVEY CONTENT ********************* -->
+    <ion-item class="req">
+        <ion-label stacked>First Name</ion-label>
+        <ion-input type="text" [(ngModel)]="person.formData.qrFirstName"></ion-input>
+    </ion-item>
+
+    <ion-item class="req">
+        <ion-label stacked>Last Name</ion-label>
+        <ion-input type="text" [(ngModel)]="person.formData.qrLastName"></ion-input>
+    </ion-item>
+
+    <ion-item class="req">
+        <ion-label stacked>Email</ion-label>
+        <ion-input type="email" [(ngModel)]="person.formData.qrEmail"></ion-input>
+    </ion-item>
+
+    <ion-item class="req">
+        <ion-label stacked>Company</ion-label>
+        <ion-input type="text" [(ngModel)]="person.formData.qrCompany"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Title</ion-label>
+        <ion-input type="text" [(ngModel)]="person.formData.qrTitle"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Phone</ion-label>
+        <ion-input type="tel" [(ngModel)]="person.formData.qrPhone"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Address</ion-label>
+        <ion-input type="text" [(ngModel)]="person.formData.qrAddress1"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Address 2</ion-label>
+        <ion-input type="text" [(ngModel)]="person.formData.qrAddress2"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>City</ion-label>
+        <ion-input type="text" [(ngModel)]="person.formData.qrCity"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>State</ion-label>
+        <ion-input type="text" [(ngModel)]="person.formData.qrState"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Zip Code</ion-label>
+        <ion-input type="tel" [(ngModel)]="person.formData.qrZip"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Country</ion-label>
+        <ion-input type="text" [(ngModel)]="person.formData.qrCountry"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Notes</ion-label>
+        <ion-input type="text" [(ngModel)]="person.formData.qrNotes"></ion-input>
+    </ion-item>    
+
+    <ion-item><!--Pick One-->
+      <ion-label stacked>Follow-up preference:</ion-label>
+      <ion-select [(ngModel)]="person.formData.qrFollowUp[0]">
+        <ion-option value="qrFollowUp_1">Meeting</ion-option>
+        <ion-option value="qrFollowUp_2">Salesperson call</ion-option>
+        <ion-option value="qrFollowUp_3">Receive proposal</ion-option>
+        <ion-option value="qrFollowUp_4">Product demo</ion-option>       
+        <ion-option value="qrFollowUp_5">No follow-up</ion-option> 
+      </ion-select>
+    </ion-item>
+
+    <ion-item><!--Pick One-->
+      <ion-label stacked>Timeframe:</ion-label>
+      <ion-select [(ngModel)]="person.formData.qrTime[0]">
+        <ion-option value="qrTime_1">Immediate Need</ion-option>
+        <ion-option value="qrTime_2">30 Days</ion-option>
+        <ion-option value="qrTime_3">3 Months</ion-option>
+        <ion-option value="qrTime_4">6 Months</ion-option>       
+        <ion-option value="qrTime_5">1 Year</ion-option> 
+      </ion-select>
+    </ion-item>
+
+    <ion-item><!--Pick One-->
+      <ion-label stacked>Role:</ion-label>
+      <ion-select [(ngModel)]="person.formData.qrRole[0]">
+        <ion-option value="qrRole_1">Final Say</ion-option>
+        <ion-option value="qrRole_2">Purchase Decision</ion-option>
+        <ion-option value="qrRole_3">Recommendation</ion-option>
+        <ion-option value="qrRole_4">Influence</ion-option>       
+        <ion-option value="qrRole_5">Partial Interest</ion-option> 
+      </ion-select>
+    </ion-item>
+
+    <ion-item class="checkbox-item">
+        <ion-label>Information Requested</ion-label>
+        <ion-checkbox [(ngModel)]="person.formData.qrInfo_Yes"></ion-checkbox>
+    </ion-item>
+
+   <!--  <ion-item class="req">
+      <ion-label stacked>I am planning to attend</ion-label>
+      <ion-select [(ngModel)]="person.formData.qrSessionsAttending" multiple="true">
+        <ion-option value="qrSessionsAttending_0">Breakfast</ion-option>
+        <ion-option value="qrSessionsAttending_1">Sales Meeting</ion-option>
+        <ion-option value="qrSessionsAttending_2">Breakout Sessions</ion-option>
+        <ion-option value="qrSessionsAttending_3">Post-Show Event</ion-option>
+      </ion-select>
+    </ion-item> -->
+
+	<!-- *********************** LEAD RANKING ***************************** -->
+    <!--Hidden Lead Ranking-->
+   <!--  <ion-item style="display:none;">
+      <ion-label stacked>Lead Rank</ion-label>
+      <ion-select [(ngModel)]="person.formData.qrLeadRank[0]">
+        <ion-option value="qrLeadRank_1">Hot</ion-option>
+        <ion-option value="qrLeadRank_2">Warm</ion-option>
+        <ion-option value="qrLeadRank_3">Cold</ion-option>        
+      </ion-select>
+    </ion-item> -->
+
+	<!-- *********************** PERMANENT FIELDS ***************************** -->
+    <ion-item style="display:none;"><!--Hidden Record Guid -->
+        <ion-label floating>RegId</ion-label>
+        <ion-input type="text" [(ngModel)]="person.formData.qrRegId" disabled></ion-input>
+    </ion-item>
+
+    <ion-item style="display:none;"><!--Hidden Booth Rep -->
+        <ion-label floating>Booth Rep</ion-label>
+        <ion-input type="text" [(ngModel)]="person.formData.qrBoothRep" disabled></ion-input>
+    </ion-item>
+
+    <ion-item style="display:none;"><!--Hidden Booth Rep -->
+        <ion-label floating>Booth Station</ion-label>
+        <ion-input type="text" [(ngModel)]="person.formData.qrBoothStation" disabled></ion-input>
+    </ion-item>
+
+    <ion-item style="display:none;"><!--Hidden Booth Rep -->
+        <ion-label floating>Device ID</ion-label>
+        <ion-input type="text" [(ngModel)]="person.formData.qrDeviceId" disabled></ion-input>
+    </ion-item>
+
+     <button block large primary (click)="savePerson()" class="m-t-10">{{editFlag ? 'Save Edits' : 'Save New Record'}}</button>
+</ion-content>
